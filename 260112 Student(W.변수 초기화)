@@ -1,0 +1,40 @@
+package javastudy260112;
+
+public class Student {
+	
+	static String schoolName;
+	
+	public String name;
+	public String age;
+	private int tall;
+	private int grade = 100;	//명시적 초기화(변수에 값을 넣어서 초기화)
+								//인스턴스 초기화 블럭 {} 중괄호를 열고 닫기
+	
+
+	public Student() { //생성자 메서드 초기화
+	}
+	
+// 변수 초기화 순서
+// 1. 명시적 초기화 2. 초기화 블럭 3. 생성자 메서드
+	
+	
+//  여러개 생성 가능 (단, 매개 변수의 타입이 달라야 함)	
+	public Student(String name,String age,int tall) {
+		this.name = name;
+		this.age = age;
+		this.tall = tall;	
+	}
+	
+	public Student(String name,int tall) {
+		this.name = name;
+		this.tall = tall;	
+	}
+	
+//	객체에 저장되어있는 값을 출력할때 toString 메서드를 사용
+	public String toString() {
+		return name+":"+age+":"+tall+":"+grade;
+	}
+	
+
+
+}
