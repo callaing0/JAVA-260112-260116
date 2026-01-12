@@ -83,5 +83,25 @@ public class Vending {
 			System.out.println(this.productName+"는 구매가 불가능합니다.");								
 		}
 	}
+	
+	// 문제 3번
+	// 음료수 수량이 부족하여 채우려고 한다.
+	// 해당 음료수의 수량과 채우기 위해 사용된 수량을 출력하시오.
+	
+	/*
+	public void modify(int stock2) {
+		if(this.stock < 5) {
+			stock = this.stock+stock2;
+			System.out.println(this.productName+"의 남은 재고 : "+this.stock+", 채워진 재고 :"+stock2+", 총 재고 :"+stock);
+		} else {
+			System.out.println(this.productName+"의 재고는 충분합니다.");	
+		}
+	}
+	*/
+	
+	public void add(int addstock) {
+		this.stock = this.stock+addstock;
+		System.out.println(this.productName+"의 추가 재고 :"+addstock+", 총 재고 :"+this.stock);
+	}
 
 }
