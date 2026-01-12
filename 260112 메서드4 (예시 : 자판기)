@@ -62,7 +62,8 @@ public class Vending {
 	// 문제 2번
 	// 음료를 구매하는데 수량이 충분한지 아니면 품절인지 확인하시오.
 	// 품절이면 "품절" 수량이 충분하면 수량 출력
-	
+
+/*
 	public void stockmeun (String meun) {
 		if (meun == this.productName) {
 			if(this.stock > 0) {
@@ -70,6 +71,16 @@ public class Vending {
 			} else {
 				System.out.println(this.productName+"는 구매가 불가능합니다.");								
 			}
+		}
+	}
+
+*/
+	
+	public void stockmeun() {
+		if(this.stock > 0) {
+			System.out.println("\n"+this.productName+"는 구매가 가능합니다. 수량 : "+stock);
+		} else {
+			System.out.println(this.productName+"는 구매가 불가능합니다.");								
 		}
 	}
 
