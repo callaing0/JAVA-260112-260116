@@ -23,6 +23,14 @@ public class MainMethod2 {
 		
 		americano.stockmeun();
 		latte.stockmeun();
+		
+		/*
+		americano.modify(2);
+		latte.modify(3);
+		*/
+		
+		americano.add();
+		latte.add();
 
 	}
 	
