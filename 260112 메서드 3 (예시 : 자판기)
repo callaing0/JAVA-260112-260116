@@ -1,0 +1,27 @@
+package javastudy260112;
+
+public class MainMethod2 {
+	
+	public static void main(String[] args) {
+		Vending americano = new Vending("아메리카노",1800,5);
+		Vending latte = new Vending("초코라떼",2000,4);
+		System.out.println(americano);
+		System.out.println(latte);
+		
+		//문제 1번		
+		americano.stockdown(1800);
+		System.out.println(americano);
+		
+		latte.stockdown(1800);
+		System.out.println(latte);
+		
+		//문제 2번
+		americano.stockmeun("아메리카노");
+		latte.stockmeun("초코라떼");
+
+	}
+	
+
+	
+
+}
