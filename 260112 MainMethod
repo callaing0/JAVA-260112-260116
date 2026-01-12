@@ -1,0 +1,20 @@
+package javastudy260112;
+
+public class MainMethod {
+	
+	public static void main(String[] args) {
+		
+		Student student = new Student();
+		
+		student.name = "이순신";
+		student.age = "33";
+//		student.tall = 175;	private 접근제어자로 인해 사용불가
+		
+		System.out.println(student.toString());
+		
+		Student student2 = new Student("김유신","22",185);
+		System.out.println(student2);
+		
+	}
+
+}
