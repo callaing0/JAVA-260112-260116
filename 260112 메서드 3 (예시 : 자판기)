@@ -16,8 +16,13 @@ public class MainMethod2 {
 		System.out.println(latte);
 		
 		//문제 2번
+		/*
 		americano.stockmeun("아메리카노");
 		latte.stockmeun("초코라떼");
+		*/
+		
+		americano.stockmeun();
+		latte.stockmeun();
 
 	}
 	
