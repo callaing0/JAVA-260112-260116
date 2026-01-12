@@ -1,0 +1,87 @@
+package javastudy260112;
+
+public class Study {
+
+/*
+	/*
+	메서드 : 특정 기능을 실행
+	(ex, 출력, 계산, 데이터 플터, 데이터 찾기, 데이터 옮기기, 데이터 삭제 등)
+	
+	메서드 형태
+		1. 제어자 + 타입 + 메서드 이름 (매개변수) {
+			실행 내용
+			}
+			
+			EX, public int sum(int a, int b){
+				int result = a+b;
+				}
+			
+		2. 매개변수만 있는 메서드 : 매개변수는 해당 데이터가 다른 곳에 필요한 경우를 판단하여 작성
+			public void 메서드 이름(매개변수){
+			
+			}
+			
+			EX, 생년원일을 통해 나이를 알아내시오.
+			public void getAge(int birth) {
+				int age = 2026 - (birth/10000);
+				System.out.println("나이 : "+age);
+				}
+		
+		3. 매개변수는 없고 반환(return)만 있는 메서드 : 반환하고나 하는 값의 타입을 작성 (EX, 정수라면 int)
+
+			EX, public int total(){
+				int kor = 55, mat = 60, eng = 70;
+				int tot =  kor+mat+eng;
+				return tot; 	
+			}
+			
+			tot 변수 반환 X, 변수 안의 값 반환 O
+		
+		4. 매개변수도 없고 반환도 없는 메서드 : 
+		
+			EX, public void saveDate(){
+				int a = 20;
+				DBSave(a);
+				}
+				
+		5. 매개변수도 있고 반환도 있는 메서드
+		
+			EX, public Movie setDate(String title,int year){
+				Movie movie = new Movie(title,year);
+				return movie;
+				}
+				
+		6. 총 정리
+		
+			1) 매개변수 X, 반환(return) O
+				public void 메서드() {
+				}
+				
+			1) only 매개변수
+				public void 메서드(매개변수 1, 매개변수 2) {
+				}
+				
+			1) only 반환(return) : 반환하고자 하는 값의 타입 작성, 다른 클래스에 값을 줄 경우 반환
+				public 타입 메서드(){
+				return 타입 변수;
+				}
+			
+			1) 매개변수 O, 반환(return) O 
+				public 타입 메서드(매개변수 1, 매개변수 2){
+				return 타입 변수;
+				}
+ */
+	
+	
+
+}
+
+		
+	
+	
+	
+
+
+*/
+
+}
