@@ -1,0 +1,76 @@
+package javastudy260112;
+
+public class Vending {
+	
+	// 자판기
+	private String productName;	//이름
+	private int price;		//가격
+	private int stock;		//남은 수량
+	
+	
+	public String getProductName() {
+		return productName;
+	}
+
+	public void setProductName(String productName) {
+		this.productName = productName;
+	}
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	public int getStock() {
+		return stock;
+	}
+
+	public void setStock(int stock) {
+		this.stock = stock;
+	}
+
+	
+	
+	@Override
+	public String toString() {
+		return "자판기 [메뉴 = " + productName + ", 가격 = " + price + ", 수량 = " + stock + "]";
+	}
+
+	public Vending(String productName, int price, int stock) {
+		super();
+		this.productName = productName;
+		this.price = price;
+		this.stock = stock;
+	}
+	
+	// 문제 1번
+	// 음료를 구매하기 위해 돈을 입금하였다.
+	// 내가 입금한 돈으로 구매가 가능하면 수량을 1 감소시키시오.
+	
+	public void stockdown (int money) {
+		if(money >= this.price) {
+			this.stock--;
+			System.out.println("\n구매가 가능합니다.");
+		} else {
+			System.out.println("금액이 부족합니다.");
+		}
+	}
+	
+	// 문제 2번
+	// 음료를 구매하는데 수량이 충분한지 아니면 품절인지 확인하시오.
+	// 품절이면 "품절" 수량이 충분하면 수량 출력
+	
+	public void stockmeun (String meun) {
+		if (meun == this.productName) {
+			if(this.stock > 0) {
+				System.out.println("\n"+this.productName+"는 구매가 가능합니다. 수량 : "+stock);				
+			} else {
+				System.out.println(this.productName+"는 구매가 불가능합니다.");								
+			}
+		}
+	}
+
+}
