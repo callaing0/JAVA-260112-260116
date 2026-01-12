@@ -1,0 +1,70 @@
+package javastudy260112;
+
+public class Board {
+	
+	private String title;	//게시판 제목
+	private String writer;	//게시글 작성자
+	private int hit;		//게시글 조회수
+	
+	public String getTitle() {
+		return title;
+	}
+	public void setTitle(String title) {
+		this.title = title;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	public int getHit() {
+		return hit;
+	}
+	public void setHit(int hit) {
+		this.hit = hit;
+	}
+	
+	@Override
+	public String toString() {
+		return "Board [제목 = " + title + ", 작성자 = " + writer + ", 조회수 = " + hit + "]";
+	}
+	
+//	@생성자 메서드
+	public Board(String title, String writer, int hit) {
+		super();
+		this.title = title;
+		this.writer = writer;
+		this.hit = hit;
+	}
+	
+	// 조회수 증가 메서드 작성
+	// 사용자가 해당 게시글을 클릭 시, 조회수 증가
+	// 작성자가 게시글 클릭 시, 조화수 증가 안함
+	
+	public void hitUp(String user) {
+		if(! user.equals(writer)) {
+			hit++;
+		}
+	}
+	
+	
+	// 게시글의 제목 수정
+	// 게시글의 작성자가 아니면 수정할 수 없다.
+	
+	public void modifyTitle(String who, String title) {
+		if(who.equals(writer)) {
+			this.title = title;
+			System.out.println("\n제목을 수정하였습니다.");
+		} else {
+			System.out.println("\n작성자가 아니므로 제목을 수정할 수 없습니다.");
+		}
+	}
+	
+	//
+	
+	
+	
+	
+}
+
