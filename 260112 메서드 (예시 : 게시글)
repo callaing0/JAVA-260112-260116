@@ -1,0 +1,25 @@
+package javastudy260112;
+
+public class Method01 {
+	public static void main(String[] args) {
+		
+		Board board = new Board("빵의 가치","장발장",25);
+		System.out.println(board);
+		
+		//조회수 증가
+		board.hitUp("이순신");
+		System.out.println(board);
+		
+		board.hitUp("장발장");
+		System.out.println(board);
+
+		// 제목 수정
+		board.modifyTitle("김춘추","효모 사용법");
+		System.out.println(board);
+		
+		board.modifyTitle("장발장","가치있는 빵");
+		System.out.println(board);
+		
+	}
+
+}
