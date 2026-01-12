@@ -1,0 +1,84 @@
+package javastudy260112;
+
+public class BingoGame {
+	
+	//사용자 명, 레벨, 승, 패, 무
+	//저장할 수 있는 객체가 생성될 수 있게 만들기
+	
+	//모든 인스턴스 변수는 private
+	//생성자 메서드를 통해 사용자 명, 레벨, 승, 패, 무 입력받기
+	//출력메서드 만들기
+	
+	//변수
+	private String name;
+	private int level;
+	private int win;
+	private int lose;
+	private int draw;
+	
+//	private 지정된 변수 사용법
+//		private 접근제어자는 오로지 내부에서만 사용, 외부에서 사용하기 위해선 set, get 메서드 이용
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getLevel() {
+		return level;
+	}
+
+	public void setLevel(int level) {
+		this.level = level;
+	}
+
+	public int getWin() {
+		return win;
+	}
+
+	public void setWin(int win) {
+		this.win = win;
+	}
+
+	public int getLose() {
+		return lose;
+	}
+
+	public void setLose(int lose) {
+		this.lose = lose;
+	}
+
+	public int getDraw() {
+		return draw;
+	}
+
+	public void setDraw(int draw) {
+		this.draw = draw;
+	}
+
+	//생성자
+	public BingoGame(String name,int level,int win,int lose,int draw) {
+		this.name = name;
+		this.level = level;
+		this.win = win;
+		this.lose = lose;
+		this.draw = draw;
+	}
+	
+	public String toString() {
+		return "사용자 : "+name+", 레벨 : "+level+"\n(승리 : "+win+", 패배 : "+lose+", 무승부 : "+draw+")";
+	}
+
+	//출력
+	public static void main(String[] args) {
+		
+		BingoGame bingogame = new BingoGame("이순신",10,5,1,2);
+		
+		System.out.println(bingogame.toString());
+	}
+	
+
+}
