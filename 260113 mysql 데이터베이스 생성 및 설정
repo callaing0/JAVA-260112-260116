@@ -29,8 +29,11 @@ Database changed
 mysql> create table product(id int auto_increment primary key, item_name varchar(255), price int, stock int, description varchar(255));
 Query OK, 0 rows affected (0.03 sec)
 
-5. 데이터 입력
+5-1. 데이터 입력
 mysql> insert into product(item_name, price, stock, description) values('선풍기',50000,400,'얼음같은 바람 선풍기');
+
+5-2. dbeaver (데이터 입력 도구)
+
 
 6. 데이터 확인
 mysql> select * from product;
