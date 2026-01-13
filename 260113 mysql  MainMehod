@@ -1,0 +1,10 @@
+package javastudy26011302;
+
+public class MainMehod {
+	public static void main(String[] args) {
+		
+		DBConnect connect = new DBConnect();
+		
+	}
+
+}
