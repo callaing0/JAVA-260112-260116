@@ -1,0 +1,96 @@
+1. 작성
+
+package javastudy260113;
+
+import java.util.Scanner;
+
+public class UserService {
+Scanner sc = new Scanner(System.in);
+
+public void login(User[] users) {
+		System.out.println("===== LOGIN =====");
+		System.out.print("아이디를 입력하세요: ");
+		String id = sc.nextLine();
+		System.out.print("비밀번호를 입력하세요: ");
+		String password = sc.nextLine();	
+
+1.1 방법 1번
+		boolean islogin = false;
+		for(User user : users) {
+			if(user.getId().equals(id) && user.getPassword().equals(password)) {
+				System.out.println("로그인에 성공하셨습니다.");
+				islogin = true;
+				break;
+			}
+		}
+		if(! islogin) {
+			System.out.println("아이디 또는 비밀번호가 잘못되었습니다");
+			}
+		}
+	}
+
+1.2 방법 2번
+		
+		User temp = isID(users,id);
+		if(temp == null) {
+			System.out.println("아이디 또는 비밀번호가 잘못되었습니다");
+		} else if(temp.getPassword().equals(password)) {
+			System.out.println("로그인에 성공하셨습니다.");
+		} else {
+			System.out.println("아이디 또는 비밀번호가 잘못되었습니다");
+		}
+
+private User isID(User[] users, String id) {
+		for(User user : users) {
+			//ID가 일치하는 유저 정보가 들어있는 주소 반환
+			if(user.getId().equals(id)) {
+				return user;		
+			}
+			//일치하는 유저가 없으면 null 반환
+			return null;
+			}
+		}
+	}
+
+1.3 방법 3번 (User Class에 'public User() { }' 추가 필요)
+
+		User temp = isID(users,id);
+		if(temp.getPassword().equals(password)) {
+			System.out.println("로그인에 성공하셨습니다.");
+		} else {
+			System.out.println("아이디 또는 비밀번호가 잘못되었습니다");
+		}
+
+private User isID(User[] users, String id) {
+		for(User user : users) {
+			//ID가 일치하는 유저 정보가 들어있는 주소 반환
+			if(user.getId().equals(id)) {
+				return user;		
+			}
+			//일치하는 유저가 없으면 null 반환
+			return new User();
+			}
+		}
+	}
+
+
+2. 실행
+
+package javastudy260113;
+
+public class MainMehod {
+	
+	public static void main(String[] args) {
+		
+		User[] users = {
+				new User("이순신","1234","lee","01045828272"),
+				new User("김유신","2352","kim","01055681284"),
+				new User("장발장","1675","jang","01078951235"),
+				new User("개순심","1328","dog","01007895212"),
+				new User("문익점","9834","moon","01088995522")	
+		};
+		
+		UserService us = new UserService();
+		us.login(users);
+	}
+}
