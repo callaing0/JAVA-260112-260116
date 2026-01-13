@@ -42,8 +42,14 @@ public class DBConnect {
 		Product[] product = new Product[6];
 		
 		//쿼리문 작성
+		String sql = "select * from product";
 		
 		//쿼리문 발송
+		try {
+		st = conn.createStatement();
+		} catch(Exception e) {
+			System.out.println("쿼리문 실패");
+		}
 		
 		//결과 불러오기
 		
