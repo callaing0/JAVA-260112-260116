@@ -1,0 +1,38 @@
+package javastudy26011302;
+
+import java.sql.ResultSet;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.Statement;
+
+public class DBConnect {
+	
+	private Connection conn;	//데이터베이스 연결
+	private Statement st;		//데이터베이스 쿼리문 전달 및 결과 송출
+	private ResultSet rs;		//데이터베이스 결과 저장
+	
+	public DBConnect() {
+		connect();
+	}
+	
+	//데이터 베이스 접속 (mysql)
+	public void connect() {
+		
+		// 예외 처리 try ~ catch
+		// try : 실행 시도, catch : 오류를 회피하여 종료가 아닌 실행을 지속	
+		try {
+			Class.forName("com.mysql.cj.jdbc.Driver");			
+			
+			//mysql 정보 입력
+			String username = "callaing";
+			String password = "8182";
+			String ur1 = "jdbc:mysql://localhost:3306/callaing";
+			
+			//mysql 로그인
+			conn = DriverManager.getConnection(ur1,username,password);	
+		} catch(Exception e) {
+			System.out.println("접속 실패");
+			e.printStackTrace();  //오류 원인 출력
+		}
+	}
+}
