@@ -1,0 +1,56 @@
+1. 작성
+
+package javastudy260113;
+
+import java.util.Scanner;
+
+public class UserService {
+	Scanner sc = new Scanner(System.in);
+
+  public void repassword(User[] users) {
+		System.out.println("===== 비밀번호 찾기 =====");
+		System.out.print("아이디를 입력하세요: ");
+		String id = sc.nextLine();
+		System.out.print("연락처를 입력하세요: ");
+		String tal = sc.nextLine();	
+		
+		boolean isDis = true;
+		for(User user : users) {
+			if(user.getId().equals(id) && user.getTal().equals(tal)) {
+				System.out.print("변경할 비밀번호를 입력해주세요: ");
+				String pw = sc.nextLine();
+				user.setPassword(pw);
+				isDis = false;
+				break;
+				} 
+			}
+			if(! isDis) {
+				System.out.println("일치하는 정보가 없습니다.");
+			}
+		} 
+	}
+
+
+  2. 실행
+package javastudy260113;
+
+public class MainMehod {
+	
+	public static void main(String[] args) {
+		
+		User[] users = {
+				new User("이순신","1234","lee","01045828272"),
+				new User("김유신","2352","kim","01055681284"),
+				new User("장발장","1675","jang","01078951235"),
+				new User("개순심","1328","dog","01007895212"),
+				new User("문익점","9834","moon","01088995522")	
+		};
+		
+		UserService us = new UserService();
+		us.repassword(users);
+
+		
+	}
+
+	
+}
