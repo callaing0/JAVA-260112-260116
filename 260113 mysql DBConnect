@@ -35,4 +35,21 @@ public class DBConnect {
 			e.printStackTrace();  //오류 원인 출력
 		}
 	}
+	
+	//Product 테이블 데이터 불러오기
+	
+	public Product[] selectData() {
+		Product[] product = new Product[6];
+		
+		//쿼리문 작성
+		
+		//쿼리문 발송
+		
+		//결과 불러오기
+		
+		//데이터 Product 객체 저장
+		
+		return product;
+	}
+	
 }
