@@ -1,0 +1,45 @@
+Enter password: ******
+Welcome to the MySQL monitor.  Commands end with ; or \g.
+Your MySQL connection id is 18
+Server version: 8.0.39 MySQL Community Server - GPL
+
+Copyright (c) 2000, 2024, Oracle and/or its affiliates.
+
+Oracle is a registered trademark of Oracle Corporation and/or its
+affiliates. Other names may be trademarks of their respective
+owners.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+1. 아이디 비번 생성
+mysql> create user callaing identified by '8182';
+Query OK, 0 rows affected (0.01 sec)
+
+2. 데이터베이스 이름 설정
+mysql> create database callaing;
+Query OK, 1 row affected (0.01 sec)
+
+3. 권한 설정
+mysql> grant all privileges on callaing.* to 'callaing';
+Query OK, 0 rows affected (0.00 sec)
+
+4. 테이블 생성
+mysql> use callaing;
+Database changed
+mysql> create table product(id int auto_increment primary key, item_name varchar(255), price int, stock int, description varchar(255));
+Query OK, 0 rows affected (0.03 sec)
+
+5. 데이터 입력
+mysql> insert into product(item_name, price, stock, description) values('선풍기',50000,400,'얼음같은 바람 선풍기');
+
+6. 데이터 확인
+mysql> select * from product;
+
+6-1. 데이터 확인 결과
++----+-----------+-------+-------+----------------------+
+| id | item_name | price | stock | description          |
++----+-----------+-------+-------+----------------------+
+|  1 | 선풍기    | 50000 |   400 | 얼음같은 바람 선풍기 |
++----+-----------+-------+-------+----------------------+
+1 row in set (0.00 sec)
+
