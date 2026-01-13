@@ -36,7 +36,11 @@ public class User {
 	public String toString() {
 		return "User [사용자: " + name + ", 비밀번호: " + password + ", ID: " + id + ", 연락처: " + tal + "]";
 	}
-	
+
+1. 로그인의 방법 3번에 따라 추가 필요 
+	public User() { 
+	}
+
 	public User(String name, String password, String id, String tal) {
 		super();
 		this.name = name;
