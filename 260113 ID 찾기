@@ -1,0 +1,50 @@
+1. 작성
+
+package javastudy260113;
+
+import java.util.Scanner;
+
+public class UserService {
+	
+	//데이터 저장 관리를 위한 클래스의 경우
+	//데이터 필터링. 파일저장(DB), 불러오기 등을 수행하지 않음
+	//저장 관련 메서드 또는 데이터 변환에 대해서만 작성함
+	
+	//ID 찾기 (이름을 입력하여 아이디 찾기)
+	
+	Scanner sc = new Scanner(System.in);
+
+
+	public void findid(User[] users) {
+		
+		System.out.println("====== 아이디 찾기 ======");
+		System.out.print("이름을 입력하세요: ");
+		String name = sc.nextLine();
+		
+		for(User user : users) {
+			if(user.getName().equals(name)) {
+				System.out.println("찾으신 아이디는 "+user.getId()+" 입니다");
+				break;
+			}
+		}
+	}
+
+
+2. 실행
+
+package javastudy260113;
+
+public class MainMehod {
+	
+	public static void main(String[] args) {
+		
+		User[] users = {
+				new User("이순신","1234","lee","01045828272"),
+				new User("김유신","2352","kim","01055681284"),
+				new User("장발장","1675","jang","01078951235"),
+				new User("개순심","1328","dog","01007895212"),
+				new User("문익점","9834","moon","01088995522")	
+		};
+		
+		UserService us = new UserService();
+  	us.findid(users);
