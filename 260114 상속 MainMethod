@@ -1,0 +1,18 @@
+package sangsog;
+
+import products.Television;
+
+public class MainMethod {
+	public static void main(String[] args) {
+		
+		//TV
+		Television tv = new Television();
+		
+		tv.power();
+		tv.power();
+		
+		//냉장고
+		Refrigerator refrigerator = new Refrigerator();
+		
+	}
+}
