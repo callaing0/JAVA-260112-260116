@@ -6,56 +6,58 @@ import java.sql.DriverManager;
 import java.sql.Statement;
 
 public class DBConnect {
-	
-	private Connection conn;	//데이터베이스 연결
-	private Statement st;		//데이터베이스 쿼리문 전달 및 결과 송출
-	private ResultSet rs;		//데이터베이스 결과 저장
-	
-	public DBConnect() {
-		connect();
-	}
-	
-	//데이터 베이스 접속 (mysql)
-	public void connect() {
-		
-		// 예외 처리 try ~ catch
-		// try : 실행 시도, catch : 오류를 회피하여 종료가 아닌 실행을 지속	
-		try {
-			Class.forName("com.mysql.cj.jdbc.Driver");			
-			
-			//mysql 정보 입력
-			String username = "callaing";
-			String password = "8182";
-			String ur1 = "jdbc:mysql://localhost:3306/callaing";
-			
-			//mysql 로그인
-			conn = DriverManager.getConnection(ur1,username,password);	
-		} catch(Exception e) {
-			System.out.println("접속 실패");
-			e.printStackTrace();  //오류 원인 출력
-		}
-	}
-	
-	//Product 테이블 데이터 불러오기
-	
-	public Product[] selectData() {
-		Product[] product = new Product[6];
-		
-		//쿼리문 작성
-		String sql = "select * from product";
-		
-		//쿼리문 발송
-		try {
-		st = conn.createStatement();
-		} catch(Exception e) {
-			System.out.println("쿼리문 실패");
-		}
-		
-		//결과 불러오기
-		
-		//데이터 Product 객체 저장
-		
-		return product;
-	}
-	
+
+    private Connection conn;
+    private Statement st;
+    private ResultSet rs;
+
+    public DBConnect() {
+        connect();
+    }
+
+    // 데이터베이스 접속
+    public void connect() {
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+
+            String username = "callaing";
+            String password = "8182";
+            String url = "jdbc:mysql://localhost:3306/callaing";
+
+            conn = DriverManager.getConnection(url, username, password);
+        } catch (Exception e) {
+            System.out.println("접속 실패");
+            e.printStackTrace();
+        }
+    }
+
+    // Product 테이블 데이터 불러오기
+    public Product[] selectData() {
+
+        Product[] product = new Product[6];
+        String sql = "select * from product";
+
+        try {
+            st = conn.createStatement();
+            rs = st.executeQuery(sql);   
+
+            int i = 0;
+            while (rs.next()) {
+                Product temp = new Product(
+                        rs.getString("item_name"),
+                        rs.getInt("price"),
+                        rs.getInt("stock"),
+                        rs.getString("description")
+                );
+                product[i] = temp;      
+                i++;
+            }
+
+        } catch (Exception e) {
+            System.out.println("쿼리 또는 객체 생성 실패");
+            e.printStackTrace();
+        }
+
+        return product;
+    }
 }
