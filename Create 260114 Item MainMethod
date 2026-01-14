@@ -1,0 +1,11 @@
+package javastudy26011402;
+
+public class MainMethod {
+	public static void main(String[] args) {
+		
+		DBConnect connect = new DBConnect();
+		Item[] items = connect.snack();
+		System.out.println(items[1]);
+		
+	}
+}
