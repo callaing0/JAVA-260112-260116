@@ -1,0 +1,21 @@
+package products;
+
+import common.Appliance;
+
+// TV  extends+(부모 클래스 작성) : 상속처리
+public class Television extends Appliance {
+	
+	
+	
+	@Override
+	public void power() {
+		onoff = !onoff;
+		if(onoff) {
+            System.out.println("TV 전원이 켜졌습니다");
+        } else {
+            System.out.println("TV 전원이 꺼졌습니다");
+        }
+	}
+
+   
+}
