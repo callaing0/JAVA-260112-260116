@@ -1,0 +1,35 @@
+package common;
+
+//전자제품
+public class Appliance {
+	
+	//자식이 사용할 수 있게 protected 처리
+	 protected boolean onoff = false;	//전원
+	 protected String name;				//제품명
+	 protected int powerCon;			//소비전력
+	 
+	 protected Appliance(String name,  int powerCon) {
+		 this.name = name;
+		 this.powerCon = powerCon;
+	 }
+		
+	    public void power() {
+
+	        onoff = !onoff;
+	        String res = onoff ? "켜짐" : "꺼짐";
+
+	        if (onoff) {
+	            System.out.println("전원이 켜졌습니다");
+	        } else {
+	            System.out.println("전원이 꺼졌습니다");
+	        }
+	    }
+	    
+	    
+	    
+	    
+	    
+
+}
+
+
