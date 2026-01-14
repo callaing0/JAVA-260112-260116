@@ -8,6 +8,9 @@ public class Appliance {
 	 protected String name;				//제품명
 	 protected int powerCon;			//소비전력
 	 
+	 protected Appliance() {	 
+	 }
+	 
 	 protected Appliance(String name,  int powerCon) {
 		 this.name = name;
 		 this.powerCon = powerCon;
