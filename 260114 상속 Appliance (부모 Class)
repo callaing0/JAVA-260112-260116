@@ -15,8 +15,15 @@ public class Appliance {
 		 this.name = name;
 		 this.powerCon = powerCon;
 	 }
-		
-	    public void power() {
+	 
+	 
+	    @Override
+	public String toString() {
+		return "Appliance [전원: " + onoff + ", 제품: " + name + ", 전력소모량: " + powerCon + "]";
+	}
+	    
+
+		public void power() {
 
 	        onoff = !onoff;
 	        String res = onoff ? "켜짐" : "꺼짐";
