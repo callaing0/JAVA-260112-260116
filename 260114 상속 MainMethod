@@ -1,5 +1,7 @@
 package sangsog;
 
+import products.Aircon;
+import products.Refrigerator;
 import products.Television;
 
 public class MainMethod {
