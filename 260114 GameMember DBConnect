@@ -5,8 +5,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import javastudy26011302.Product;
-
 public class DBConnect {
 	
     private Connection conn;
@@ -32,13 +30,10 @@ public class DBConnect {
             conn = DriverManager.getConnection(url, username, password);
         } catch (Exception e) {
             System.out.println("접속에 실패하셨습니다.");
-            
-            //접속 오류 원인 송출
-            e.printStackTrace();
         }
     }
     
-    public GameMember[] selectData() {
+    public GameMember[] findAll() {
     	GameMember[] gamemembers = new GameMember[10];
     	
     	//Query 작성
@@ -51,22 +46,20 @@ public class DBConnect {
              
              int i = 0;
              while (rs.next()) {
-            	 GameMember dara = new GameMember(
+            	 GameMember data = new GameMember(
                          rs.getString("name"),
                          rs.getString("birth"),
                          rs.getString("nickName"),
                          rs.getInt("level")
                  );
-            	 gamemembers[i] = dara;      
+            	 gamemembers[i] = data;      
                  i++;
              }
-
          } catch (Exception e) {
              System.out.println("질의 및 객체 생성 실패");
-             e.printStackTrace();
          }
     	
-    	eturn gameMember;
+    	return gamemembers;
     }
     
     
