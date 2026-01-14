@@ -13,8 +13,9 @@ public class MainMethod {
 		
 		//냉장고
 		Refrigerator refrigerator = new Refrigerator();
-
+		
 		//에어컨
-		Aircon air = new Aircon("LG 휘센",310);
+		Aircon air = new Aircon("LG 휘센", 310);
+		System.out.println(air);
 	}
 }
