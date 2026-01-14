@@ -1,0 +1,73 @@
+package javastudy260114;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
+
+import javastudy26011302.Product;
+
+public class DBConnect {
+	
+    private Connection conn;
+    private Statement st;
+    private ResultSet rs;
+    
+    //DB 연결을 위한 Method
+    public DBConnect() {
+        connect();
+    }
+    
+  
+    public void connect() {
+        try {
+        	//DB Driver 실햄 및 연결
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            
+            //DB 계정 로그인
+            String username = "callaing";
+            String password = "8182";
+            String url = "jdbc:mysql://localhost:3306/callaing";
+
+            conn = DriverManager.getConnection(url, username, password);
+        } catch (Exception e) {
+            System.out.println("접속에 실패하셨습니다.");
+            
+            //접속 오류 원인 송출
+            e.printStackTrace();
+        }
+    }
+    
+    public GameMember[] selectData() {
+    	GameMember[] gamemembers = new GameMember[10];
+    	
+    	//Query 작성
+    	String sql = "select * from game_member";
+    	
+    	//Query 보내기
+    	 try {
+             st = conn.createStatement();
+             rs = st.executeQuery(sql);   
+             
+             int i = 0;
+             while (rs.next()) {
+            	 GameMember dara = new GameMember(
+                         rs.getString("name"),
+                         rs.getString("birth"),
+                         rs.getString("nickName"),
+                         rs.getInt("level")
+                 );
+            	 gamemembers[i] = dara;      
+                 i++;
+             }
+
+         } catch (Exception e) {
+             System.out.println("질의 및 객체 생성 실패");
+             e.printStackTrace();
+         }
+    	
+    	eturn gameMember;
+    }
+    
+    
+} 
