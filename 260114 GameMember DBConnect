@@ -19,10 +19,10 @@ public class DBConnect {
   
     public void connect() {
         try {
-        	//DB Driver 실햄 및 연결
+        	//DB Driver 실햄 및 연결(변동없음)
             Class.forName("com.mysql.cj.jdbc.Driver");
             
-            //DB 계정 로그인
+            //DB 계정 로그인(변동있음)
             String username = "callaing";
             String password = "8182";
             String url = "jdbc:mysql://localhost:3306/callaing";
