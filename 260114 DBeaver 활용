@@ -1,0 +1,16 @@
+1. 테이블 생성
+
+create table game_member(              //테이블 이름
+   id int auto_increment primary key,  //순번 자동 증가
+   name varchar(50),                   //행 종류 및 크기 설정
+   birth varchar(10),
+   nick_name varchar(50),
+   level int
+);
+
+2. 엑셀로 데이터 정리 후 DBeaver 삽입 
+   2-1. 엑셀 저장 (CSV UTF-8 쉼표로 분리)
+   2-2. 메모장으로 파일 오픈 후 다른 이름으로 저장(모든 파일 형식, ANSI 인코딩)
+         ** 한글이 있을 경우에만 2-2 필수
+   2-3. 데이터가 필요한 테이블의 데이터 가져오기 클릭
+   2-4. CSV 가져오기 - Browse - CSV 파일 선택
