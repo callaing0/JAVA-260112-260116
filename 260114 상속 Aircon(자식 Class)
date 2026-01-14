@@ -1,0 +1,19 @@
+package products;
+
+import common.Appliance;
+
+//에어컨 extends+(부모 클래스 작성) : 상속처리
+public class Aircon extends Appliance {
+	
+	public Aircon() {
+	}
+	
+	// super : 부모클래스의 생성자 매서드를 실행
+	public Aircon(String name, int pwerCon) {
+		super(name, powerCon);
+	}
+	
+	
+	
+
+}
