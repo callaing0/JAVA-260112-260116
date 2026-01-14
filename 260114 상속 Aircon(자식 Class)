@@ -10,7 +10,7 @@ public class Aircon extends Appliance {
 	
 	// super : 부모클래스의 생성자 매서드를 실행
 	public Aircon(String name, int pwerCon) {
-		super(name, powerCon);
+		super(name, pwerCon);
 	}
 	
 	@Override
