@@ -1,0 +1,17 @@
+package products;
+
+import common.Appliance;
+
+//냉장고  extends+(부모 클래스 작성) : 상속처리
+public class Refrigerator extends Appliance{
+	
+	public Refrigerator() {
+		power();
+	}
+	
+	@Override
+	public void power() {
+		System.out.println("냉장고 가동을 시작합니다.");
+	}
+
+}
