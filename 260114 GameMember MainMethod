@@ -1,0 +1,9 @@
+package javastudy260114;
+
+public class MainMethod {
+	public static void main(String[] args) {
+		
+		DBConnect connect = new DBConnect();
+		GameMember[] gamemembers = connect.findAll();	
+	}
+}
