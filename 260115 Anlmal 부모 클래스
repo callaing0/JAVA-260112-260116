@@ -1,0 +1,18 @@
+package common;
+
+public abstract class Anlmal {
+	
+	protected String name;
+	public Anlmal(String name) {
+		this.name = name;
+	}
+	
+	// final : @Override 불가
+	public final void sleep() {
+		System.out.println(name+"가 잠을 잡니다.");
+	}
+	
+	//자식 클래스가 구헌해야하는 규칙
+	public abstract void sound();
+
+}
