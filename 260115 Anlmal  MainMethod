@@ -1,0 +1,35 @@
+package sangsog;
+
+import animals.Bird;
+import animals.Cat;
+import animals.Dog;
+import animals.Rabbit;
+import common.Anlmal;
+
+public class MainMethod {
+	public static void main(String[] args) {
+		
+		Anlmal[] anlmals = {
+				new Dog("강아지","비숑"),
+				new Cat("고양이"),
+				new Rabbit("토끼"),
+				new Bird("앵무새")
+		};
+		
+		for(Anlmal a : anlmals) {
+			a.sound();
+			a.sleep();
+			
+			//instanceof : 변수 안의 객체를 확인 
+			if(a instanceof Dog)
+			((Dog)a).getBreed();
+			System.out.println();
+		}
+		
+		//bird 클래스를 만드시오
+		//
+		
+	}
+	
+
+}
