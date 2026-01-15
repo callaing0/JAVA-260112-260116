@@ -1,0 +1,83 @@
+1. Bird
+
+package animals;
+
+import common.Anlmal;
+
+public class Bird extends Anlmal{
+	
+	public Bird(String name) {
+		super(name);
+	} 
+	
+	@Override
+	public void sound() {
+		System.out.println("짹짹");
+	}
+
+}
+
+2. Cat
+package animals;
+
+import common.Anlmal;
+
+public class Cat extends Anlmal {
+
+	public Cat(String name) {
+		super(name);
+	}
+	
+	@Override
+	public void sound() {
+		System.out.println("야옹");
+	}
+
+}
+
+3. Dog
+
+package animals;
+
+import common.Anlmal;
+
+public class Dog extends Anlmal {
+	
+	// 견종
+	private String breed;
+
+	public Dog(String name, String breed) {
+		super(name);
+		this.breed = breed;
+	}
+	
+	//DOG Class 전용
+	public void getBreed() {
+		System.out.println(breed);
+	}
+	
+	@Override
+	public void sound() {
+		System.out.println("멍멍");
+	}
+
+}
+
+4. Rabbit
+
+package animals;
+
+import common.Anlmal;
+
+public class Rabbit extends Anlmal {
+
+	public Rabbit(String name) {
+		super(name);
+	}
+	
+	@Override
+	public void sound() {
+		System.out.println("끼잉");
+	}
+
+}
